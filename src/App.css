@@ -1,38 +1,124 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+}
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.map {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.location-finder {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  width: min-content;
+
+  margin: 98px auto;
+  margin-bottom: 0px;
+
+  border-radius: 16px;
+
+  background-color: white;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.ride-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ride-selector {
+  width: min-content;
+  /* padding: 24px; */
+
+  border-radius: 16px;
+
+  background-color: white;
+
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.connector {
+  position: absolute;
+  left: 38px;
+  top: 77px;
+}
+
+.ride {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 450px;
+  padding: 14px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ride:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.ride-group > * {
+  margin: 0;
+}
+
+.ride-time {
+  font-size: 14px;
+  color: grey;
+}
+
+.ride:hover .ride-time {
+  color: black;
+}
+
+.ride-pic {
+  transition: 0.2s all;
+}
+
+.ride:hover .ride-pic {
+  transform: scale(1.2);
+}
+
+.ride-description {
+  font-size: 14px;
+  color: grey;
+}
+
+.ride-price {
+  font-weight: normal;
+  text-align: right;
+  font-size: 16px;
+}
+
+.ride-group:nth-child(2) {
+  flex-grow: 1;
+}
+
+.ride-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ride-type {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ride-discount {
+  font-size: 12px;
+  color: grey;
+  text-decoration: line-through;
+  text-align: right;
 }
